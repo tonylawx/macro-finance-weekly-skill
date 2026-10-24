@@ -15,10 +15,10 @@ Use this skill to produce Monday's pre-market **Global Macro & US Equities Weekl
 2. **Follow Liquidity & Capital Flow (资金与机制穿透)**:
    - Price action is driven by balance sheets and flows, not mere media narratives.
    - Evaluate benchmark yields (US 10Y, 2Y), DXY (Dollar Index), Fed RRP/TGA liquidity, and equity volatility (VIX, Gamma flips).
-3. **Multi-Branch Scenario Tree (三套情景推演)**:
+3. **Strategic Game Plan & Risk Management (后市博弈与关键分水岭)**:
    - For incoming catalysts (CPI, FOMC rate decisions, mega-cap earnings):
-     - Never issue a single deterministic prediction.
-     - Build three distinct branches: **Bullish Case**, **Base Case**, and **Bearish Case**, specifying the exact trigger threshold and asset reaction chain.
+     - Identify clear market pivot levels and portfolio defensive boundaries in a cohesive narrative.
+     - Strictly avoid mechanical, formulaic branch enumeration (do NOT use "其一乐观、其二基准、其三悲观"). Provide clear falsification criteria and asset reactions naturally.
 4. **Conclusion → Evidence → Mechanism → Trading Implication**:
    - Every substantive claim must clearly delineate the conclusion, observable data, economic transmission mechanism, and practical portfolio implication.
 5. **Chart Support**:
@@ -36,8 +36,8 @@ Use this skill to produce Monday's pre-market **Global Macro & US Equities Weekl
 2. **Subheadings (小标题 / H2)**:
    - `## 0`, `## 1`, `## 2`, `## 3` 采用连贯自然的叙事实体短语，**严禁使用冒号（`:` 或 `：`）或 `xxx:xxx` 的套路化模板**。
 
-3. **Natural Forward Outlook (自然前瞻，无内部黑话)**:
-   - 最后一节（`## 3`）写清晰的情景分支与应对推演（Game Plan），**严禁在面向读者的正文中出现“长期合订本推演：”或“后续由事实合订本核对检验”等内部工程术语**。
+3. **Natural Forward Outlook (自然前瞻，无内部黑话与刻板分支)**:
+   - 最后一节（`## 3`）写清晰的交易应对与防守逻辑（Game Plan），**严禁在面向读者的正文中机械枚举“其一乐观、其二基准、其三悲观”，严禁出现“长期合订本推演：”或“后续由事实合订本核对检验”等内部工程术语**。以连贯的深度报道笔触剖析多空博弈胜负手。
 
 ## Structural Template (Fixed Four-Part Architecture)
 
@@ -51,9 +51,9 @@ Use this skill to produce Monday's pre-market **Global Macro & US Equities Weekl
 - **`## 2 [本周前瞻重磅事件与财报雷达，无冒号]`**:
   - Key economic calendar releases (time, consensus estimate, prior print).
   - High-impact corporate earnings releases with implied volatility metrics.
-- **`## 3 [三套市场情景树与应对推演，无冒号]`**:
-  - Scenario A (Bull), Scenario B (Base), Scenario C (Bear).
-  - Explicit falsification levels (e.g., "S&P 500 support breaks below \$5,680 triggers defensive hedging").
+- **`## 3 [后市博弈焦点与核心防线，无冒号]`**:
+  - Critical pivot levels and market balance zones.
+  - Concrete invalidation levels and capital management discipline.
   - Core thesis summary suitable for copy-ready X post with cashtags.
 
 ## Workflow

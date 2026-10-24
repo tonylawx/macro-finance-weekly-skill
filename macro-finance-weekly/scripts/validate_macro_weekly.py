@@ -48,13 +48,15 @@ def validate_text(text: str) -> list[str]:
     if first_person_count > 12:
         errors.append(f"First-person pronoun count exceeds limit: {first_person_count} > 12.")
 
-    # 5. Check Scenario planning keywords in section 3
+    # 5. Check forward-looking trading & risk management terms in section 3
     sec3_match = re.search(r"## 3.*", text, re.DOTALL)
     if sec3_match:
         sec3_content = sec3_match.group(0)
-        scenario_keywords = ["情景", "乐观", "悲观", "基准", "推演", "支撑", "防守"]
-        if not any(kw in sec3_content for kw in scenario_keywords):
-            errors.append("Section 3 must contain scenario planning terms (情景/乐观/基准/悲观/支撑位/防守).")
+        outlook_keywords = ["支撑", "防守", "阻力", "分水岭", "防线", "仓位", "博弈", "风险", "纪律"]
+        if not any(kw in sec3_content for kw in outlook_keywords):
+            errors.append("Section 3 must contain forward-looking risk management terms (支撑/防守/阻力/分水岭/防线/仓位/博弈).")
+        if re.search(r"(其一|其二|其三|乐观情景|悲观情景|基准情景)", sec3_content):
+            errors.append("Section 3 must not use formulaic branch enumeration (其一/其二/其三/乐观情景/悲观情景); write a cohesive, natural narrative.")
 
     # 6. Length check
     char_count = len(re.sub(r"\s+", "", text))
