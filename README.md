@@ -2,7 +2,7 @@
 
 Agent and Codex skill for market review, liquidity tracking, and scenario tree game planning for Monday's **Global Macro & US Equities Weekly Wrap (全球宏观与美股周报)**.
 
-Rooted in institutional research discipline and the industrial self-media methodology from 马督工 (Ma Dougong):
+Rooted in institutional research discipline and industrial content engineering standards:
 1. **Welcome the Binder (欢迎合订本)**: Week-ahead planning begins with a transparent, public review of last week's predictions and positioning against actual market prints.
 2. **Capital Flow & Mechanism over Narrative (资金穿透与机制推演)**: Replaces speculative price guessing with macro drivers (10Y yield, US Dollar DXY, Fed liquidity, CTA systematic positioning, and option Gamma regimes).
 3. **Multi-Branch Scenario Tree (三套情景推演)**: Formulates Bullish, Base, and Bearish playbooks with explicit falsification conditions for upcoming catalyst events (CPI, PCE, FOMC, key earnings).
