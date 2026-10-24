@@ -27,10 +27,11 @@ Use this skill to produce Monday's pre-market **Global Macro & US Equities Weekl
 ## Title & Structural Hard Rules (标题与结构硬性规范)
 
 1. **Main Title (大标题 / H1)**:
+   - **带有栏目标识 (Branded Column Prefix)**: 大标题开头必须带有栏目标识 `【全球宏观周报】`（或 `【美股周报】`）（例如 `【全球宏观周报】非农超预期未能打破降息定价，美股高位分歧开始加速暴露 20261026`）。
    - **单点聚焦，选最重的一条 (Single Lead Theme)**: 严禁将两三起不同事件用逗号并列拼接在主标题中。必须从全周宏观博弈中筛选出最具决定性、最牵动全球资产定价的**唯一起核心矛盾**作为主线。
    - **抓人眼球，突出硬核冲突 (Eye-Catching & Conflict-Driven)**: 标题必须极具吸引力，直击预期与现实的反差（如流动性拐点、非农与通胀数据打架、美债异动冲击纳指等），杜绝平铺直叙的公文式汇报。
    - **严禁使用冒号 (Strictly No Colons)**: **大标题严禁使用冒号（无论是全角 `：` 还是半角 `:`）**！杜绝 `A：B` 模板，采用连贯自然、张力十足的叙事长句或逗号短语。
-   - 归档与草稿末尾保留 `YYYYMMDD` 日期戳（如 `非农超预期未能打破降息定价，美股高位分歧开始加速暴露 20261026`）。
+   - 归档与草稿末尾保留 `YYYYMMDD` 日期戳。
 
 2. **Subheadings (小标题 / H2)**:
    - `## 0`, `## 1`, `## 2`, `## 3` 采用连贯自然的叙事实体短语，**严禁使用冒号（`:` 或 `：`）或 `xxx:xxx` 的套路化模板**。
@@ -40,7 +41,7 @@ Use this skill to produce Monday's pre-market **Global Macro & US Equities Weekl
 
 ## Structural Template (Fixed Four-Part Architecture)
 
-- **Draft Title**: `[聚焦最重矛盾 + 强吸引力 + 无冒号自然标题] 2026MMDD`
+- **Draft Title**: `【全球宏观周报】[聚焦最重矛盾 + 强吸引力 + 无冒号自然标题] 2026MMDD`
 - **`## 0 [盘面复盘与关键点位检验，无冒号]`**:
   - Weekly return stats across major indices (`**SPY**`, `**QQQ**`, `**IWM**`), 10Y Treasury yield, and commodities.
   - Transparent retrospective on last week's game plan.
