@@ -87,5 +87,5 @@ Use this skill to produce Monday's pre-market **Global Macro & US Equities Weekl
 1. **Verify Timeline & Anchor Window**: Define $T$ and restrict review window to $[T-7, T-1]$.
 2. **Collect Real Data & Populate `source_notes.md`**: Query verified market quotes and macro releases for the target window, logging specific dates and sources.
 3. **Drafting**: Write complete Markdown adhering to `templates/macro-weekly-template.md`.
-4. **Validation**: Run `python3 .codex/skills/macro-finance-weekly/scripts/validate_macro_weekly.py <file>`.
+4. **Validation**: From this skill directory, run `python3 scripts/validate_macro_weekly.py <draft.md> --source-notes <source_notes.md>`.
 5. **Handoff**: Pass the verified draft to humanizer, translation editor, and blog/WeChat renderers.

@@ -25,11 +25,16 @@ macro-finance-weekly-skill/
 └── README.md
 ```
 
-## Validation
+## Usage
+
+Read [macro-finance-weekly/SKILL.md](macro-finance-weekly/SKILL.md) and use its references and template.
+Run the validator from the repository root with paths to your draft and source notes.
 
 ```bash
-python3 macro-finance-weekly/scripts/validate_macro_weekly.py path/to/draft.md
+python3 macro-finance-weekly/scripts/validate_macro_weekly.py path/to/draft.md --source-notes path/to/source_notes.md
 ```
+
+Run the validator tests with `python3 -m unittest discover -s tests -v`.
 
 ## License
 
