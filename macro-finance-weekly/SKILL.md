@@ -80,7 +80,6 @@ Use this skill to produce Monday's pre-market **Global Macro & US Equities Weekl
    - 梳理本周（周一至周五，标明具体日期与周几）重磅宏观日程（如 FOMC、PCE、非农）及核心财报。
 - **`## 3 [后市博弈焦点与核心防线，无冒号]`**:
    - 提炼关键多空分水岭点位与仓位防御纪律。
-   - 给出适合发布在 X 上的观点提要与互动问题。
 
 ## Workflow
 
