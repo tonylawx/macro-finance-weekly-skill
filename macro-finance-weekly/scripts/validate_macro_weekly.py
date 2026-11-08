@@ -145,10 +145,26 @@ def validate_text(text: str) -> list[str]:
         if re.search(r"(其一|其二|其三|乐观情景|悲观情景|基准情景)", sec3_content):
             errors.append("Section 3 must not use formulaic branch enumeration (其一/其二/其三/乐观情景/悲观情景); write a cohesive, natural narrative.")
 
-    # 6. Length check
+    # 6. Length & Richness check
     char_count = len(re.sub(r"\s+", "", text))
-    if char_count < 1200:
-        errors.append(f"Article is too terse: {char_count} characters (minimum 1200 recommended).")
+    if char_count < 2200:
+        errors.append(f"Article is too terse for an industrial-grade macro weekly wrap: {char_count} characters (minimum 2200 required, 3200~5000 recommended).")
+
+    # Section Paragraph Richness check
+    sections = re.split(r"(?m)^##\s+", text)
+    if len(sections) >= 5:  # preamble + 4 sections
+        for idx, sec in enumerate(sections[1:], start=0):
+            sec_lines = sec.strip().splitlines()
+            sec_title = sec_lines[0] if sec_lines else f"Section {idx}"
+            clean_sec = re.sub(r"```chart[\s\S]*?```", "", sec)
+            paragraphs = [p.strip() for p in re.split(r"\n\s*\n", clean_sec)[1:] if len(p.strip()) > 50]
+            if len(paragraphs) < 2:
+                errors.append(f"Section '## {sec_title}' lacks depth: found {len(paragraphs)} substantial paragraphs (minimum 2 paragraphs required for industrial depth).")
+
+    # Quantitative Metrics Density check
+    metrics_found = re.findall(r"\d+(?:\.\d+)?%|\$\d+(?:\.\d+)?|\b\d+(?:\.\d+)?(?:点|基点|bps|亿|万|美元|桶)\b", text)
+    if len(metrics_found) < 6:
+        errors.append(f"Insufficient quantitative market data density: found only {len(metrics_found)} specific metric occurrences (minimum 6 required to substantiate accounting claims).")
 
     # 7. Check Arabic numerals in headings
     for line in lines:
