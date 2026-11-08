@@ -1,59 +1,71 @@
-# Macro & Finance Weekly: Research Standard (宏观研究与复盘规范)
+# Macro & Finance Weekly: Research Standard
 
-遵循长期主义合订本原则与买方机构宏观推演标准。以真实收集整理的新闻与数据为基石，杜绝任何臆造与年份穿越。
-
----
-
-## 一、 时间窗口与信源锚定铁律 (Time Window & Source Anchoring)
-
-1. **严格限定上一周时间窗口 (Past Week Window)**
-   - 周报研究对象是**上周一至上周日（$[T-7, T-1]$）**发生的真实事件。
-   - 严禁抓取或拼接历史年份（如两年前同月）的数据当成当下新闻。检索时必须严格限定年份（如 `2026年10月`）。
-   - 历史行情对比必须显式声明（如“对比 2024 年同周期”），不可伪装成当期动态。
-
-2. **可溯源的权威信源 (Verifiable Sources)**
-   - 宏观数据必须溯源到官方统计机构（BLS, BEA, Fed, 财政部）或权威财经终端（彭博社、路透社、华尔街日报）。
-   - 盘面点位必须核对上周五真实收盘数据（标普、纳指、道指、美债收益率）。
-   - 每一条核心论据在正文中必须注明**具体日期**（如“10月23日”）和**权威出处**（如“据美国劳工统计局公布”）。
-   - **严禁引用零售炒股软件**：严禁出现“长桥”、“长桥数据”、“富途”、“老虎证券”等零售券商名义。盘面与技术指标归属到交易所官方数据或彭博社；财报日历归属到公司官方公告。
+Follows institutional research discipline, the Binder Protocol, and Industrial Content Engineering standards. Grounded strictly in verified empirical market data from the preceding week, eliminating speculation and historical date contamination.
 
 ---
 
-## 二、 合订本复盘铁律 (The Binder Protocol)
+## 1. Time Window & Source Anchoring Rules
 
-1. **客观直面得失**
-   - 任何针对未来走势的研判，每周一开篇必须与真实市场点位对账。
-   - 收益率预测或趋势推演出现偏差时，禁止用“虽然跌了但是逻辑没错”等主观借口搪塞，必须指出机制脱靶的具体变量（如“未充分计入中东地缘原油溢价”或“日元套息交易平仓超预期”）。
+1. **Strict Past Week Window Boundaries**:
+   - The weekly research window is strictly bounded to **Monday through Sunday ($[T-7, T-1]$)** prior to benchmark publish date $T$ (e.g. `2026-10-26`).
+   - Market tape data covers the 5 trading days from Monday through Friday ($[T-7, T-3]$). Macro catalysts cover through Sunday.
+   - Searching background data requires forcing current year and month qualifiers (e.g. `2026年10月` or `October 2026`). Never use unanchored keywords or treat historical years as current facts.
+   - Historical comparisons must be explicitly labelled (e.g. "compared with the 2024 cycle"); do not disguise historical precedent as current news.
 
-2. **长期框架连续性**
-   - 不因为单周的红绿涨跌轻易推翻中长期宏观基本面假设。
-   - 框架升级必须伴随逻辑底层参数的真实改变（如劳动参与率拐点、生产率提升证实、财政赤字路径偏移）。
-
-3. **合订本属于内部研究自律，严禁作为元语言侵入面向读者的正文**
-   - 合订本对账、历史研判复核属于买方内部的研究底稿与策略迭代流程。
-   - 严禁在面向读者的正文中向读者进行个人“自我纠错汇报”或假定读者读过往期（如“上期把...设为观察线”、“上期写下的结论应予收回”、“上期日历排错更正为”）。
-   - 面向读者的正文必须始终自洽独立，以专业机构投研报道的笔触直接解析盘面分水岭、传导机制与多空博弈。
-
----
-
-## 三、 机制穿透与推导链条 (Transmission Chains)
-
-1. **拒绝孤立描述行情**
-   - 严禁单纯写“大盘大涨/大跌”，必须给出传导链条：
-     $$\text{外生冲击 / 宏观数据} \longrightarrow \text{基准利率/流动性预期} \longrightarrow \text{估值乘数/盈利预期} \longrightarrow \text{资产价格重估}$$
-
-2. **重视资金面约束**
-   - 关注美债拍卖需求（Bid-to-Cover Ratio）、美联储逆回购（RRP）及财政部账户（TGA）变动。
-   - 关注基准利率高企对科技成长股远期现金流折现的估值压制。
+2. **Verifiable Primary Sources**:
+   - Macro indicators must trace to official statistical agencies (BLS, BEA, Federal Reserve, US Treasury, EIA) or authoritative institutional terminals (Bloomberg, Reuters, Wall Street Journal).
+   - Closing levels must match verified Friday prints (S&P 500, Nasdaq 100, Dow Jones, US 10Y Yield, DXY, Brent Crude).
+   - Every substantive assertion in Sections 0 and 1 must state **specific dates** (e.g. `10月23日` or `上周五`) and **authoritative institutional sources** (e.g. `据彭博社数据显示`, `美国经济分析局公布`).
+   - **Strictly No Retail Broker Software Attribution**: Prohibit citations of retail brokerage apps (长桥, 富途, 老虎证券, 雪盈证券). Attribute market quotes to public exchange feeds or Bloomberg terminals; attribute earnings schedules to official corporate disclosures.
 
 ---
 
-## 四、 情景树推演规范 (Scenario Tree Standard)
+## 2. Industrial Content Engineering Principles
 
-面对本周即将公布的重大催化剂（如非农就业报告、CPI 通胀、FOMC 利率决议、科技巨头财报）：
+1. **Follow the Capital Ledger & Real Costs**:
+   - Do not stop at green/red closing percentage prints. Penetrate the macro and sovereign balance sheet:
+     - **Liquidity Reservoir Depletion**: Track the remaining Fed Reverse Repo (RRP) cushion, Treasury General Account (TGA) replenishment flows, and commercial bank reserve contractions.
+     - **Debt Service Overhead**: Track annual sovereign interest outlays (exceeding \$1T annualized), corporate refinancing roll-over costs at 4.5%–5.0% benchmark rates, and debt-to-equity vulnerability.
+     - **Consumer Purchasing Power vs Headline GDP**: Contrast headline GDP 3.4% annualized figures against real personal disposable income contraction and savings rate depletion.
+2. **Structure of Conflicts over Moralizing**:
+   - Map structural frictions between economic agents:
+     - **Treasury Borrowing Needs vs Creditor Term Premium Demands**: Heavy debt issuance colliding with bond market demands for higher term premiums to hedge persistent inflation.
+     - **Restrictive Monetary Policy vs High-Multiple Asset Valuation**: Hawkish central bank signals colliding with equity market expectations of imminent liquidity easing.
+     - **Mega-Cap Breadth Distortion vs Broad Market Bleed**: A handful of trillion-dollar tech weights masking underlying deterioration in market breadth.
+3. **The Cognitive Ladder (70% Familiarity + 30% Hardcore Increment)**:
+   - Begin with familiar index closes and central bank rate votes.
+   - Elevate the analysis with institutional insights: Term Premium decomposition, Treasury Quarterly Refunding Announcement (QRA) issuance maturities, and options gamma pinning.
+4. **The Two-Turn Cognitive Hook**:
+   - Execute the 2-turn progression:
+     - **Superficial Expectation A**: Indices appear range-bound while yields edged down slightly.
+     - **Turn 1 (Ledger Reversal B)**: Micro-tape reveals semiconductor ETFs crashing 8% in a single session, real consumer purchasing power shrinking, and energy prices refusing to retreat.
+     - **Turn 2 (Systemic Deadlock C)**: Heavy Treasury auction supply combined with rigid interest obligations caps discount-rate relief, ensuring that minor rate drops cannot offset earnings multiple compression.
+5. **Historical Mirroring**:
+   - Benchmark present asset repricing against historical analogues: 1995 Greenspan preventive easing curve steepening, or 1980s high-deficit, high-rate stagflation episodes.
 
-1. **禁止单边预测**
-   - 永远不得以“下周必涨”或“大概率暴跌”作为核心结论。
-2. **推演留底稿，正文重自然**
-   - 内部推演可拆解为乐观、基准与悲观分支以厘清传导路径。
-   - **严禁在面向读者的正文中机械枚举“其一乐观、其二基准、其三悲观”的套路化分支**；正文中应围绕关键多空分水岭、胜负手机制与防守纪律展开连贯深度的专业叙述。
+---
+
+## 3. Transmission Chains & Capital Flow
+
+1. **Reject Isolated Price Description**:
+   - Replace generic market comments with transmission chains:
+     $$\text{Exogenous Shock / Macro Print} \longrightarrow \text{Yield / Liquidity Expectations} \longrightarrow \text{Valuation Multiples / Cash Flows} \longrightarrow \text{Asset Price Repricing}$$
+2. **Follow Liquidity Dynamics**:
+   - Monitor Treasury auction bid-to-cover ratios, primary dealer absorption capacity, and policy rate expectations.
+   - Evaluate benchmark yield pressure on tech growth cash flow discounting.
+
+---
+
+## 4. Scenario Planning & The Binder Protocol
+
+When addressing incoming macro catalysts (CPI, PCE, FOMC decisions, mega-cap earnings):
+
+1. **Prohibit Single-Sided Speculation**:
+   - Never issue one-directional predictions like "stocks are guaranteed to surge or crash."
+2. **Structured Working Notes, Natural Prose**:
+   - Working notes may outline bullish, base, and bearish branches to clarify transmission paths.
+   - **Strictly avoid mechanical enumeration in reader-facing copy** (do NOT write "其一乐观、其二基准、其三悲观"). Weave inflection points, pivot levels, and defense disciplines into cohesive, high-density reporting prose.
+3. **Self-Contained Independence & Zero Prior Context Assumption**:
+   - Research auditing belongs in internal working notes.
+   - **Never expose author self-correction or assume readers read past editions** (strictly prohibit phrases like "上期把...设为观察线", "上期写下的结论应予收回", "更正上期的错误").
+   - State technical support and resistance levels objectively based on current tape geometry.
