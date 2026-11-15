@@ -29,7 +29,7 @@ def make_draft(count=6):
     )
     return (
         "# 【财经周报】通胀和中国出口背后的成本变化 20261116\n\n"
-        "全球财经 · 宏观经济 · 中国出口 · 能源市场 · 企业融资\n\n"
+        "美股 · 期权 · 资讯 · 观点\n\n"
         "这些数据为什么值得追问？谁来承担最后的成本？\n\n"
         + body + "\n\n## 3 六条新闻连接的经济成本账本\n\n"
         + "综合观察相关公司利润率、现金流和下周经济数据。"
@@ -84,8 +84,8 @@ class NewsRoundupValidationTest(unittest.TestCase):
         self.assertTrue(any("URLs" in e for e in validate_roundup(make_draft() + " https://outside.example")))
 
     def test_title_and_kicker_should_not_be_removed_as_compliance_cleanup(self):
-        text = make_draft().replace("全球财经 · 宏观经济 · 中国出口 · 能源市场 · 企业融资", "")
-        self.assertTrue(any("visible finance" in e for e in validate_roundup(text)))
+        text = make_draft().replace("美股 · 期权 · 资讯 · 观点", "")
+        self.assertTrue(any("immutable" in e for e in validate_roundup(text)))
 
     def test_digest_length(self):
         self.assertTrue(any("digest" in e for e in validate_roundup(make_draft(), digest="很短。")))
