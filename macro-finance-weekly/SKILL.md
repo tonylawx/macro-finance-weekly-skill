@@ -10,16 +10,45 @@ This workflow replaces speculative forecasts and emotional tips with institution
 
 ---
 
-## Default editorial routing for 财经周报 — news roundup (2026-11-16)
+## Default editorial routing — high-value global finance news with industrial-media analysis (2026-11-16)
 
-**This section takes precedence over the long-form macro/US-equity analysis instructions below when the request is simply “财经周报”.** The user publishes daily US-equity analysis already. The weekly edition must therefore be a **global business and finance NEWS DIGEST**, not an S&P/Nasdaq/ETF market wrap, technical-level forecast, options trade plan, or another essay about US stock trends.
+**When the request is simply「财经周报」, this section overrides the old US-stock weekly-market-analysis format below.** The user already publishes US-equity market recaps every day, so the weekly edition is a **curated global finance news synthesis with original explanatory value**, not another SPY/QQQ technical review and not a newsroom bulletin board.
 
-- **Default scope:** the preceding calendar week, 8–12 independently verifiable, high-impact news items, selected across global economic policy, inflation, trade, China, Europe/UK, energy/geopolitics, currencies/central banks, companies, M&A, financing and AI industry. Avoid crowding out non-US reporting.
-- **Format:** title `【财经周报】全球财经X条重要新闻 YYYYMMDD`; a two- or three-sentence editorial introduction; thematic groups; within each, numbered short items with **what happened → exact figure/date → why it matters**. Attribute named primary agencies, company disclosures or independent financial reporting; do not invent prices or carry a prediction forward as an established event. Include a short upcoming calendar with announced dates clearly separated from happened news.
-- **Length:** normally 1,800–3,200 Chinese characters; 100–250 Chinese characters per item. Favor breadth, accuracy, and concrete details over long generic macro arguments. No obligatory 3–5 paragraphs per section, chart JSON, S&P/QQQ/SPY/SOXX/IWM return tables, bond-yield decomposition, technical pivots, or tactical trading instructions.
-- **Verification:** every item has a dated source in separate `source_notes.md`; in WeChat body name the source as ordinary text, never a promotional off-platform link, QR code, contact bait, or hidden continuation.
-- **Publishing:** AI can assist drafting but a human editor must meaningfully curate, fact-check, revise, preview and manually publish. Create only an approval draft through the existing `wechat-runs/**` flow. The native WeChat account card is inserted in the official editor during review until officially generated card HTML and draft/get behavior have been tested. The card is not a substitute for complete content.
-- **Tools:** use `templates/finance-news-roundup-template.md` and `scripts/validate_finance_news_roundup.py` for the roundup mode. **Do not use `scripts/validate_macro_weekly.py`** on this news digest: it enforces a different deep-analysis structure. Use the old deep-analysis workflow *only when explicitly requested as 宏观深度分析 / 美股周度策略 / technical market recap*.
+### A. Choose consequential stories, NOT a fixed news count
+
+- Usually choose **4–7 truly important events**, never add filler to hit a number. Start from verified dated events in the preceding week, then rate *breadth and durability of impact*, *who earns/loses/pays*, *quality of primary evidence*, and *incremental explanation beyond generic press releases* (each 0–5).
+- Retain only stories with both strong evidence and an identifiable economic mechanism. When two stories share a cause, merge them into one stronger story (e.g. CPI+PPI, exports+factory margins). Avoid low-incremental quarterly headlines and duplicate coverage from the separate tech weekly.
+- Cover relevant developments across China, North America, Europe, global energy, currencies, trade and corporate balance sheets; **do not enforce artificial geography quotas**, but never let US stock-price action crowd out real global financial news.
+- Explain omitted candidates in `source_notes.md` to make the curation decision inspectable. The score is a *qualitative editorial filter*, not a statistical prediction.
+
+### B. Ma-Dugong-style reporting discipline — report + ask who pays
+
+The durable intellectual standard is in [industrial-media-methodology.md](references/industrial-media-methodology.md). Apply it in *natural journalistic paragraphs*, not by literally printing A/B/C or rigid labels in the reader-facing article.
+
+1. **Start from a concrete, attributable event** — what changed, exact date, number and comparison baseline. Do not silently equate a year-on-year rate with a monthly rate or a proposal with a completed transaction.
+2. **Reconstruct the cash ledger** — source of funding, buyers and suppliers, profits vs revenue, debt vs equity, operating and financing costs, and the actual unit that bears the expense. When estimating, show arithmetic and explicit assumptions rather than presenting a sensitivity as disclosed cash cost.
+3. **Map actors' incentives and constraints** — who gains bargaining power, who has to fund the outcome, who is left holding a maturity or margin problem. Avoid moralizing and conspiratorial claims about motives.
+4. **Make two cognitive turns when justified by facts** — common interpretation → counterintuitive ledger observation → structural trade-off. No invented twists and no unsupported causal certainty.
+5. **Close with an observable falsification test** — company margin, actual disbursement, shipping/insurance quote, audited profit, real policy action date, debt refinancing outcome, or later economic release. State what would weaken the interpretation.
+6. **Cross-story synthesis** — choose one legitimate shared tension if present. Half-tree: selected news items feed into a clear common conclusion. Do not force unrelated stories into a universal thesis.
+
+Prefer 2–4 substantial paragraphs per chosen event (usually **300–600 Chinese characters**), and typically **2,800–4,800 Chinese characters** total. A single dense, source-supported analysis beats ten 100-character press-release paraphrases. Do not reuse empty boilerplate like “未来值得继续关注”.
+
+### C. WeChat search discoverability and safe platform operation BOTH matter
+
+Compliance prohibits *bait and unsafe promotions*, not normal editorial discovery. **Never strip legitimate SEO content as a side effect of eliminating a QR code.**
+
+- **Searchable, truthful H1 title:** `【财经周报】[1–3 important naturally phrased news topics + a real tension] YYYYMMDD`; no forced “全球X条新闻” or bait (“震惊/暴赚/一定”), no colons, no keyword-stuffing.
+- **Concise 70–130-character WeChat digest** describing the major events and why reading is worthwhile; carry it into `meta.json.digest`.
+- **One readable theme/column kicker** near the top, such as `全球财经 · 宏观经济 · 国际贸易 · 能源 · 企业融资`; not hidden text, irrelevant hashtags, repeated SEO spam, or links to other accounts.
+- **Semantic topic headings and natural long-tail terms** (e.g. 美国CPI/PPI、中国出口、国际油价、港企融资), accurate dates, original subheadings and self-contained facts. Indexable blog version retains the canonical URL and structured metadata on its own channel; WeChat's title, digest and body must stand alone.
+- **Source provenance** in `source_notes.md` with primary URLs and dated source labels visible in the article. Only remove real external-marketing redirects/QR/contact baits; retaining SEO does *not* require a click-through or a static follow banner.
+- Draft creation may use the existing WeChat `draft/add` or `draft/update` path; **never auto-publish**. Native account card is added through the official editor after human review, until the platform's real card markup has been confirmed with draft/get + mobile preview. Ads/AI/rights and sensitive finance claims require actual editor verification.
+
+### D. Quality gates
+
+- Use `templates/finance-news-roundup-template.md` and `scripts/validate_finance_news_roundup.py`. The validator checks story count, number/date/source, explanatory ledger/incentive/falsification cues, and SEO lead metadata. **Passing a regex cannot certify accurate reporting, valuable synthesis, legal advice or WeChat recommendation eligibility.** Human review is mandatory.
+- Preserve the legacy long-form macro template + `validate_macro_weekly.py` **only when the user explicitly asks for 宏观深度/美股周度策略/ETF 技术分析**.
 
 ## Core Mission: Building World Models & Avoiding Speculative Hype
 
