@@ -10,6 +10,17 @@ This workflow replaces speculative forecasts and emotional tips with institution
 
 ---
 
+## Default editorial routing for 财经周报 — news roundup (2026-11-16)
+
+**This section takes precedence over the long-form macro/US-equity analysis instructions below when the request is simply “财经周报”.** The user publishes daily US-equity analysis already. The weekly edition must therefore be a **global business and finance NEWS DIGEST**, not an S&P/Nasdaq/ETF market wrap, technical-level forecast, options trade plan, or another essay about US stock trends.
+
+- **Default scope:** the preceding calendar week, 8–12 independently verifiable, high-impact news items, selected across global economic policy, inflation, trade, China, Europe/UK, energy/geopolitics, currencies/central banks, companies, M&A, financing and AI industry. Avoid crowding out non-US reporting.
+- **Format:** title `【财经周报】全球财经X条重要新闻 YYYYMMDD`; a two- or three-sentence editorial introduction; thematic groups; within each, numbered short items with **what happened → exact figure/date → why it matters**. Attribute named primary agencies, company disclosures or independent financial reporting; do not invent prices or carry a prediction forward as an established event. Include a short upcoming calendar with announced dates clearly separated from happened news.
+- **Length:** normally 1,800–3,200 Chinese characters; 100–250 Chinese characters per item. Favor breadth, accuracy, and concrete details over long generic macro arguments. No obligatory 3–5 paragraphs per section, chart JSON, S&P/QQQ/SPY/SOXX/IWM return tables, bond-yield decomposition, technical pivots, or tactical trading instructions.
+- **Verification:** every item has a dated source in separate `source_notes.md`; in WeChat body name the source as ordinary text, never a promotional off-platform link, QR code, contact bait, or hidden continuation.
+- **Publishing:** AI can assist drafting but a human editor must meaningfully curate, fact-check, revise, preview and manually publish. Create only an approval draft through the existing `wechat-runs/**` flow. The native WeChat account card is inserted in the official editor during review until officially generated card HTML and draft/get behavior have been tested. The card is not a substitute for complete content.
+- **Tools:** use `templates/finance-news-roundup-template.md` and `scripts/validate_finance_news_roundup.py` for the roundup mode. **Do not use `scripts/validate_macro_weekly.py`** on this news digest: it enforces a different deep-analysis structure. Use the old deep-analysis workflow *only when explicitly requested as 宏观深度分析 / 美股周度策略 / technical market recap*.
+
 ## Core Mission: Building World Models & Avoiding Speculative Hype
 
 The fundamental objective of this weekly wrap is **to help investors construct simplified, accurate macroeconomic world models, establish disciplined risk boundaries, and drastically lower the cognitive cost of market decision-making**.
