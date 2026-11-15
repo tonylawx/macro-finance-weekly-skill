@@ -79,8 +79,8 @@ def validate_roundup(text: str, *, source_notes: str = "", digest: str = "") -> 
     if not any(term in title for term in SEO_TOPIC_TERMS):
         errors.append("SEO title should name an actual financial topic, not generic 'X headlines'.")
     first_screen = text[:420]
-    if "全球财经" not in first_screen or not any(t in first_screen for t in SEO_TOPIC_TERMS):
-        errors.append("WeChat first screen must retain a natural visible finance/keyword lead, not hidden SEO spam.")
+    if "美股 · 期权 · 资讯 · 观点" not in first_screen:
+        errors.append("WeChat first screen must retain the immutable 美股 · 期权 · 资讯 · 观点 brand line.")
     if digest and (han_count(digest) < 40 or han_count(digest) > 170):
         errors.append("Wechat digest must be concise and topical (normally 70–130 Chinese characters).")
 
