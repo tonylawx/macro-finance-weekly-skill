@@ -51,7 +51,7 @@ def validate_roundup(text: str, *, source_notes: str = "", digest: str = "") -> 
         errors.append("A news synthesis needs meaningful ## sections, number chosen by content.")
     # A consistent 0..N numbering style matters, not a fixed section count.
     section_numbers = [
-        int(re.match(r"^##\\s+(\\d+)", match.group()).group(1))
+        int(re.match(r"^##\s+(\d+)", match.group()).group(1))
         for match in sections
     ]
     if section_numbers and section_numbers != list(range(len(section_numbers))):
