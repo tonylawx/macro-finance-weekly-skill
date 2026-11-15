@@ -29,7 +29,7 @@ def make_draft(count=6):
     )
     return (
         "# 【财经周报】通胀和中国出口背后的成本变化 20261116\n\n"
-        "全球财经 · 宏观经济 · 中国出口 · 能源市场 · 企业融资\n\n"
+        "美股 · 期权 · 资讯 · 观点\n\n"
         "这些数据为什么值得追问？谁来承担最后的成本？\n\n"
         + body + "\n\n## 3 六条新闻连接的经济成本账本\n\n"
         + "综合观察相关公司利润率、现金流和下周经济数据。"
@@ -80,12 +80,25 @@ class NewsRoundupValidationTest(unittest.TestCase):
         text = text[:first] + no_ledger + text[second:]
         self.assertTrue(any("cash/cost" in e for e in validate_roundup(text)))
 
+    def test_section_count_follows_content_not_a_fixed_four(self):
+        two_chapters = (
+            make_draft()
+            .replace("## 1 全球贸易与能源", "")
+            .replace("## 2 产业与融资", "")
+            .replace("## 3 六条新闻连接的经济成本账本", "## 1 六条新闻连接的经济成本账本")
+        )
+        self.assertEqual(validate_roundup(two_chapters), [])
+        five_chapters = make_draft() + "\n\n## 4 额外重要结论\n\n形成可检验的结论。"
+        self.assertEqual(validate_roundup(five_chapters), [])
+        skipped_number = make_draft().replace("## 1 全球贸易与能源", "## 7 全球贸易与能源")
+        self.assertTrue(any("consecutive" in e for e in validate_roundup(skipped_number)))
+
     def test_blocks_external_redirect(self):
         self.assertTrue(any("URLs" in e for e in validate_roundup(make_draft() + " https://outside.example")))
 
     def test_title_and_kicker_should_not_be_removed_as_compliance_cleanup(self):
-        text = make_draft().replace("全球财经 · 宏观经济 · 中国出口 · 能源市场 · 企业融资", "")
-        self.assertTrue(any("visible finance" in e for e in validate_roundup(text)))
+        text = make_draft().replace("美股 · 期权 · 资讯 · 观点", "")
+        self.assertTrue(any("immutable" in e for e in validate_roundup(text)))
 
     def test_digest_length(self):
         self.assertTrue(any("digest" in e for e in validate_roundup(make_draft(), digest="很短。")))
