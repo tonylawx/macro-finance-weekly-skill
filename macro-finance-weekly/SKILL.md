@@ -46,7 +46,21 @@ Compliance prohibits *bait and unsafe promotions*, not normal editorial discover
 - **Source provenance** in `source_notes.md` with primary URLs and dated source labels visible in the article. Only remove real external-marketing redirects/QR/contact baits; retaining SEO does *not* require a click-through or a static follow banner.
 - Draft creation may use the existing WeChat `draft/add` or `draft/update` path; **never auto-publish**. Native account card is added through the official editor after human review, until the platform's real card markup has been confirmed with draft/get + mobile preview. Ads/AI/rights and sensitive finance claims require actual editor verification.
 
-### D. Quality gates
+### D. Mandatory bilingual human editing stage, before WeChat rendering
+
+This weekly Skill **does not replace** the shared daily publishing workflow's `humanizer-zh` and `financial-english-editor` stages. Following the industrial-media methodology is necessary, but without editing it can produce mechanically repeated “first misconception / second turn / deeper contradiction” headings.
+
+After fact-checking, **before** any HTML rendering or GitHub handoff:
+
+1. Preserve the initial Chinese research draft as `news_digest.pre-humanizer.md`; actually apply `tonylawx/us-stock-analyst/.codex/skills/humanizer-zh/SKILL.md` to produce `news_digest.md`. Vary sentence length and transitions; remove overt analytical scaffolds and repeated “不是…而是…” constructions; do not add unsupported facts or lose financial numbers, source labels, chronology and estimates.
+2. Draft spoken English from the edited Chinese and save `english_listening.pre-editor.md`. Actually apply `tonylawx/us-stock-analyst/.codex/skills/financial-english-editor/SKILL.md` (newsletter and WeChat listening instructions) to produce `english_listening.md`. English must be fluent North American market language, not a literal translation or an exhaustive “here's what matters” template.
+3. Render CN+EN only **after** both editorial passes, with exact fixed SEO mastheads and the established blue theme. Chapter count still follows the substance.
+4. Set `meta.json.humanizer_zh_applied: true` and `meta.json.pre_humanizer_path` on CN; `financial_english_editor_applied: true` and `pre_editor_path` on EN, with the actual saved snapshot paths. Never set flags when the editing was skipped.
+5. Validate the selected high-value news, source/dates, math, English listening, SEO and platform compliance. Send CN as the first article and EN as the second in one human-review WeChat draft. The blog repository's preflight must block missing editorial-pass proof.
+
+**No shortcut:** research → analytical outline → direct HTML → WeChat is an incomplete pipeline.
+
+### E. Quality gates
 
 - Use `templates/finance-news-roundup-template.md` and `scripts/validate_finance_news_roundup.py`. The validator checks story count, number/date/source, explanatory ledger/incentive/falsification cues, and SEO lead metadata. **Passing a regex cannot certify accurate reporting, valuable synthesis, legal advice or WeChat recommendation eligibility.** Human review is mandatory.
 - Preserve the legacy long-form macro template + `validate_macro_weekly.py` **only when the user explicitly asks for 宏观深度/美股周度策略/ETF 技术分析**.
