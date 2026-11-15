@@ -47,8 +47,15 @@ def validate_roundup(text: str, *, source_notes: str = "", digest: str = "") -> 
         errors.append("H1 title must not contain colons.")
 
     sections = list(SECTION_RE.finditer(text))
-    if len(sections) < 3:
-        errors.append("A news synthesis needs at least 3 thematic ## sections.")
+    if not sections:
+        errors.append("A news synthesis needs meaningful ## sections, number chosen by content.")
+    # A consistent 0..N numbering style matters, not a fixed section count.
+    section_numbers = [
+        int(re.match(r"^##\\s+(\\d+)", match.group()).group(1))
+        for match in sections
+    ]
+    if section_numbers and section_numbers != list(range(len(section_numbers))):
+        errors.append("Chapter numbering must be consecutive from 0; chapter count is content-driven.")
 
     items = list(ITEM_RE.finditer(text))
     if not 4 <= len(items) <= 7:
