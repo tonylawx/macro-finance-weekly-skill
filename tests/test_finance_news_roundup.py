@@ -67,12 +67,18 @@ class NewsRoundupValidationTest(unittest.TestCase):
         self.assertTrue(any("only a news paraphrase" in e for e in validate_roundup(text)))
 
     def test_requires_financial_ledger(self):
-        text = make_draft().replace(
-            "进口商支付能源采购成本", "不少新闻带来外部影响"
-        ).replace("企业的毛利率和消费者的实际负担", "社会发展和大家的不同生活")
-        # Regular-expression checks are guardrails, not guarantees of substantive original analysis.
-        self.assertIn("影响", text)
-        self.assertTrue(validate_roundup(text) == [] or isinstance(validate_roundup(text), list))
+        text = make_draft()
+        first = text.index("### 01")
+        second = text.index("### 02")
+        no_ledger = (
+            "### 01 统计局发布新信息\n\n"
+            + "11月10日发布了一组公开数据，统计范围为10月份。"
+              "媒体报道了这一消息，相关机构也做出了文字说明。"
+              "新闻引起了广泛讨论，不同观察者会得出不同结论。" * 4
+            + "\n\n来源：中国国家统计局，2026年11月10日\n\n"
+        )
+        text = text[:first] + no_ledger + text[second:]
+        self.assertTrue(any("cash/cost" in e for e in validate_roundup(text)))
 
     def test_blocks_external_redirect(self):
         self.assertTrue(any("URLs" in e for e in validate_roundup(make_draft() + " https://outside.example")))
